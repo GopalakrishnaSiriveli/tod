@@ -1,9 +1,25 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Navbar from '../../components/Navbar'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import landing from '../../assets/landing.jpg';
 import styles from './Landing.module.css';
+import { getUserDetails } from '../../util/GetUser';
+import Loading from '../../components/Loading';
 function Landing() {
+  const navigate = useNavigate();
+  const [isLoading, setIsLoading] = useState(true);
+  useEffect(()=>{
+    const userDetails = getUserDetails();
+   
+    if(userDetails) {
+      navigate('/to-do-list');
+    }
+    setIsLoading(false)
+  },[]);
+
+  if(isLoading) {
+    return <Loading />
+  }
   return (
     <div>
         <Navbar active={"home"}/>

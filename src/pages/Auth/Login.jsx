@@ -54,7 +54,7 @@ function Login() {
           <div className={styles.input__info}>
             New User? <Link to="/register">Register</Link>
            </div> 
-           <Button loading={loading} type="primary" size="large" disabled={!email || !password} onClick={handleSubmit} >Login</Button>
+           <Button loading={loading} style={{color:"white"}} type="primary" size="large" disabled={!email || !password} onClick={handleSubmit} >Login</Button>
       </div>
     </div>
   )

@@ -16,7 +16,7 @@ function Navbar({active}) {
 
   const handleLogout = ()=>{
     localStorage.removeItem('toDoAppUser');
-    navigate('/login');
+    navigate('/');
   }
 
   const items = [
@@ -39,7 +39,7 @@ function Navbar({active}) {
          </div>
       <ul className="navigation-menu">
              
-      <li><Link to="/" className={active==='home'}>Home</Link></li>
+      {!user &&  <li><Link to="/" className={active==='home'}>Home</Link></li>}
       {user && <li><Link to="/to-do-list" className={active==='home'}>My Task</Link></li>}
 
       {user ?
