@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { getUserDetails } from '../util/GetUser';
 
-const SERVER_URL = 'https://todo-server-1-ny6i.onrender.com';;
+const SERVER_URL = 'https://todo-server-1-ny6i.onrender.com';
 
 const authHeaders = ()=>{
     let  userToken = getUserDetails()?.token;
